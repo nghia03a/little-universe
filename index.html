@@ -1,104 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Một Vũ Trụ Nhỏ Dành Cho Em</title>
-<meta name="theme-color" content="#090D20">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inter:wght@400;500&family=Playfair+Display:wght@400;500&display=swap">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/animations.css">
-<link rel="stylesheet" href="./css/responsive.css">
-</head>
-<body data-ch="0">
-<canvas id="sky" aria-hidden="true"></canvas>
-<img class="bg galaxy" src="./assets/images/galaxy.svg" alt="" aria-hidden="true">
-<img class="moon" src="./assets/images/moon.svg" alt="" aria-hidden="true">
-<div id="dim"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Một Vũ Trụ Nhỏ Dành Cho Em</title>
+    <meta name="theme-color" content="#090D20" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inter:wght@400;500&family=Playfair+Display:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body data-ch="0">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <img
+      class="bg galaxy"
+      src="./assets/images/galaxy.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <img
+      class="moon"
+      src="./assets/images/moon.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <div id="dim"></div>
 
-<div id="music">
-  <button id="musicBtn" class="nav" aria-pressed="false" aria-label="Bật/tắt nhạc nền">♪</button>
-  <input id="vol" type="range" min="0" max="1" step="0.05" value="0.5" aria-label="Âm lượng">
-  <span id="musicState">Nhạc: tắt</span>
-</div>
-
-<main id="story">
-  <section class="chapter" data-ch="1">
-    <h1>Một Vũ Trụ Nhỏ Dành Cho Em</h1>
-    <div class="env-wrap"><button id="envelope" class="envelope" aria-label="Phong thư"><i class="e-back"></i><i class="e-paper"></i><i class="e-front"></i><i class="e-flap"></i></button></div>
-    <div id="t1" class="text"></div>
-    <button id="openBtn" class="btn">Mở Vũ Trụ Nhỏ Của Anh ✨</button>
-  </section>
-
-  <section class="chapter" data-ch="2">
-    <h2>Một Sự Tình Cờ Đẹp</h2>
-    <div id="t2" class="text"></div>
-    <button id="starBtn" class="star-btn" aria-label="Chạm vào ngôi sao">
-      <svg viewBox="0 0 24 24"><polygon points="12,1.5 14.9,8.6 22.5,9.2 16.7,14.2 18.5,21.7 12,17.6 5.5,21.7 7.3,14.2 1.5,9.2 9.1,8.6" fill="#F4F1FF"/></svg>
-    </button>
-    <p class="hand">Em chạm vào ngôi sao nhé ✨</p>
-  </section>
-
-  <section class="chapter" data-ch="3">
-    <h2>Những Điều Nhỏ Về Em</h2>
-    <div id="cards" class="cards"></div>
-    <div id="cardMsg" class="text msg" aria-live="polite"></div>
-    <button id="next3" class="btn hide">Tiếp tục</button>
-  </section>
-
-  <section class="chapter" data-ch="4">
-    <h2>Những Điều Anh Chưa Nói</h2>
-    <div id="letter4" class="letter hand" aria-live="polite"></div>
-    <button id="keep4" class="btn hide">Đọc Tiếp</button>
-  </section>
-
-  <section class="chapter" data-ch="5">
-    <h2>Nếu Có Thể</h2>
-    <p class="hand">Em thích buổi nào nhất?</p>
-    <div id="opts" class="opts"></div>
-    <div id="optMsg" class="text msg" aria-live="polite"></div>
-    <button id="next5" class="btn hide">Tiếp tục</button>
-  </section>
-
-  <section class="chapter" data-ch="6">
-    <h2>Ngôi Sao Anh Thích Nhất</h2>
-    <div id="starWrap" class="star-wrap" aria-hidden="true">
-      <svg class="s-star" viewBox="0 0 24 24"><polygon points="12,1.5 14.9,8.6 22.5,9.2 16.7,14.2 18.5,21.7 12,17.6 5.5,21.7 7.3,14.2 1.5,9.2 9.1,8.6" fill="#F4F1FF"/></svg>
-      <svg class="s-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 10c0 5.5-8 11-8 11z" fill="#F5B8D2"/></svg>
+    <div id="music">
+      <button
+        id="musicBtn"
+        class="nav"
+        aria-pressed="false"
+        aria-label="Bật/tắt nhạc nền"
+      >
+        ♪
+      </button>
+      <input
+        id="vol"
+        type="range"
+        min="0"
+        max="1"
+        step="0.05"
+        value="0.5"
+        aria-label="Âm lượng"
+      />
+      <span id="musicState">Nhạc: tắt</span>
     </div>
-    <div id="t6" class="text"></div>
-    <button id="next6" class="btn hide">Tiếp tục</button>
-  </section>
 
-  <section class="chapter" data-ch="7">
-    <h2>Một Điều Bất Ngờ Nhỏ</h2>
-    <div id="gift" class="gift" aria-hidden="true"><i class="g-light"></i><i class="g-box"></i><i class="g-lid"></i></div>
-    <div id="t7" class="text"></div>
-    <button id="unlock" class="btn">Mở Điều Bất Ngờ</button>
-    <div id="letter7" class="letter hand hide" aria-live="polite"></div>
-    <button id="next7" class="btn hide">Tiếp tục</button>
-  </section>
+    <main id="story">
+      <section class="chapter" data-ch="1">
+        <h1>GỬI TẶNG EM NÈ !!!</h1>
+        <div class="env-wrap">
+          <button id="envelope" class="envelope" aria-label="Phong thư">
+            <i class="e-back"></i><i class="e-paper"></i><i class="e-front"></i
+            ><i class="e-flap"></i>
+          </button>
+        </div>
+        <div id="t1" class="text"></div>
+        <button id="openBtn" class="btn">EM BẤM VÀO ĐÂY ĐI ✨</button>
+      </section>
 
-  <section class="chapter" data-ch="8">
-    <h2>Ngôi Sao Cuối Cùng</h2>
-    <svg id="heartSky" class="heart-sky" viewBox="-20 -16 40 36" aria-hidden="true"></svg>
-    <div id="t8" class="text"></div>
-    <button id="replay" class="btn">Xem Lại Câu Chuyện Của Chúng Mình</button>
-  </section>
-</main>
+      <section class="chapter" data-ch="2">
+        <h2>Một Sự Tình Cờ Đẹp</h2>
+        <div id="t2" class="text"></div>
+        <button id="starBtn" class="star-btn" aria-label="Chạm vào ngôi sao">
+          <svg viewBox="0 0 24 24">
+            <polygon
+              points="12,1.5 14.9,8.6 22.5,9.2 16.7,14.2 18.5,21.7 12,17.6 5.5,21.7 7.3,14.2 1.5,9.2 9.1,8.6"
+              fill="#F4F1FF"
+            />
+          </svg>
+        </button>
+        <p class="hand">Em chạm vào ngôi sao nhé ✨</p>
+      </section>
 
-<nav id="hud" aria-label="Điều hướng chương">
-  <button id="prev" class="nav" aria-label="Chương trước">‹</button>
-  <span id="count">1 / 8</span>
-  <button id="next" class="nav" aria-label="Chương sau">›</button>
-</nav>
+      <section class="chapter" data-ch="3">
+        <h2>Những Điều Nhỏ Về Em</h2>
+        <div id="cards" class="cards"></div>
+        <div id="cardMsg" class="text msg" aria-live="polite"></div>
+        <button id="next3" class="btn hide">Tiếp tục</button>
+      </section>
 
-<script src="./js/story.js" defer></script>
-<script src="./js/animations.js" defer></script>
-<script src="./js/navigation.js" defer></script>
-<script src="./js/interactions.js" defer></script>
-<script src="./js/main.js" defer></script>
-</body>
+      <section class="chapter" data-ch="4">
+        <h2>Những Điều Anh Chưa Nói</h2>
+        <div id="letter4" class="letter hand" aria-live="polite"></div>
+        <button id="keep4" class="btn hide">Đọc Tiếp</button>
+      </section>
+
+      <section class="chapter" data-ch="5">
+        <h2>Nếu Có Thể</h2>
+        <p class="hand">Em thích buổi nào nhất?</p>
+        <div id="opts" class="opts"></div>
+        <div id="optMsg" class="text msg" aria-live="polite"></div>
+        <button id="next5" class="btn hide">Tiếp tục</button>
+      </section>
+
+      <section class="chapter" data-ch="6">
+        <h2>Ngôi Sao Anh Thích Nhất</h2>
+        <div id="starWrap" class="star-wrap" aria-hidden="true">
+          <svg class="s-star" viewBox="0 0 24 24">
+            <polygon
+              points="12,1.5 14.9,8.6 22.5,9.2 16.7,14.2 18.5,21.7 12,17.6 5.5,21.7 7.3,14.2 1.5,9.2 9.1,8.6"
+              fill="#F4F1FF"
+            />
+          </svg>
+          <svg class="s-heart" viewBox="0 0 24 24">
+            <path
+              d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 10c0 5.5-8 11-8 11z"
+              fill="#F5B8D2"
+            />
+          </svg>
+        </div>
+        <div id="t6" class="text"></div>
+        <button id="next6" class="btn hide">Tiếp tục</button>
+      </section>
+
+      <section class="chapter" data-ch="7">
+        <h2>Một Điều Bất Ngờ Nhỏ</h2>
+        <div id="gift" class="gift" aria-hidden="true">
+          <i class="g-light"></i><i class="g-box"></i><i class="g-lid"></i>
+        </div>
+        <div id="t7" class="text"></div>
+        <button id="unlock" class="btn">Mở Điều Bất Ngờ</button>
+        <div id="letter7" class="letter hand hide" aria-live="polite"></div>
+        <button id="next7" class="btn hide">Tiếp tục</button>
+      </section>
+
+      <section class="chapter" data-ch="8">
+        <h2>Ngôi Sao Cuối Cùng</h2>
+        <svg
+          id="heartSky"
+          class="heart-sky"
+          viewBox="-20 -16 40 36"
+          aria-hidden="true"
+        ></svg>
+        <div id="t8" class="text"></div>
+        <button id="replay" class="btn">
+          Xem Lại Câu Chuyện Của Chúng Mình
+        </button>
+      </section>
+    </main>
+
+    <nav id="hud" aria-label="Điều hướng chương">
+      <button id="prev" class="nav" aria-label="Chương trước">‹</button>
+      <span id="count">1 / 8</span>
+      <button id="next" class="nav" aria-label="Chương sau">›</button>
+    </nav>
+
+    <script src="./js/story.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/interactions.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </body>
 </html>
