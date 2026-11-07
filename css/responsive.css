@@ -1,0 +1,4 @@
+/* Mobile first: mặc định đã dành cho điện thoại, mở rộng dần lên màn lớn */
+@media (max-width:420px){body{font-size:16px}.opt span{font-size:.8rem}.letter{font-size:1.2rem}#music input{width:56px}#musicState{display:none}}
+@media (min-width:700px){.cards{grid-template-columns:repeat(4,1fr);width:min(92vw,780px)}body{font-size:18px}}
+@media (max-height:600px){.chapter{gap:.7rem;padding-top:3rem}.envelope{height:110px;width:165px}.letter{max-height:40vh}.gift{transform:scale(.8)}}

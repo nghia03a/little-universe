@@ -1,0 +1,11 @@
+/* Keyframes */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes moonGlow{0%,100%{filter:drop-shadow(0 0 30px rgba(167,139,250,.5))}50%{filter:drop-shadow(0 0 60px rgba(142,197,252,.7))}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{from{opacity:0}to{opacity:1}}
+/* Giảm chuyển động theo cài đặt hệ thống */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .h-line{stroke-dashoffset:0}.h-star{opacity:1}
+}
